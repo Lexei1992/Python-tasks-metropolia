@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Names</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      let result = "";
+      const names = ["Mark", "John", "Lucy", "Peter", "Jane"];
+      function concat(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          result += arr[i];
+        }
+        return result;
+      }
+      concat(names);
+      document.querySelector("#target").innerHTML = result;
+    </script>
+  </body>
+</html>

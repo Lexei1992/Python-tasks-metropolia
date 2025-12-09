@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Koiria</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const count = 6;
+      let names = [];
+      for (let i = 0; i < count; i++) {
+        const name = prompt("Type name " + (i + 1) + ":");
+        names.push(name);
+      }
+      names = names.sort();
+      names = names.reverse();
+      document.querySelector("#target").innerHTML =
+        "<ul>" + names.map((n) => `<li>${n}</li>`).join("") + "</ul>";
+    </script>
+  </body>
+</html>

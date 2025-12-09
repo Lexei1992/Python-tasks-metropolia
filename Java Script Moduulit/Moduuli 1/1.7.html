@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Nopanheittoa</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const heittojenMäärä = prompt("Kuinka monta kertaa noppaa heitetään?");
+      let summa = 0;
+      let tulokset = "";
+      for (let i = 0; i < heittojenMäärä; i++) {
+        let noppaLuku = Math.floor(Math.random() * 6) + 1;
+        summa += noppaLuku;
+        tulokset += "Heitto " + (i + 1) + ": " + noppaLuku + "<br>";
+      }
+
+      document.querySelector("#target").innerHTML =
+        tulokset + "Summa: " + summa;
+    </script>
+  </body>
+</html>

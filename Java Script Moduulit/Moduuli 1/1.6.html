@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Neliöjuuri</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const varmenne = confirm("Lasketaanko neliöjuuri?");
+      if (varmenne === true) {
+        const lukuStr = prompt("Anna luku:");
+        const luku = parseFloat(lukuStr);
+        const neliöjuuri = Math.sqrt(luku);
+        document.querySelector("#target").innerHTML =
+          "Luvun " + luku + " neliöjuuri on " + neliöjuuri;
+      } else {
+        document.querySelector("#target").innerHTML =
+          "Neliöjuuren laskenta peruttu.";
+      }
+    </script>
+  </body>
+</html>

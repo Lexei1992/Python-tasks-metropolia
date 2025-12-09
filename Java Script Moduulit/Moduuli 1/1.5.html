@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Karkausvuosi</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const vuosi = prompt("Anna vuosi:");
+      if ((vuosi % 4 === 0 && vuosi % 100 !== 0) || vuosi % 400 === 0) {
+        document.querySelector("#target").innerHTML =
+          vuosi + " on karkausvuosi.";
+      } else {
+        document.querySelector("#target").innerHTML =
+          vuosi + " ei ole karkausvuosi.";
+      }
+    </script>
+  </body>
+</html>

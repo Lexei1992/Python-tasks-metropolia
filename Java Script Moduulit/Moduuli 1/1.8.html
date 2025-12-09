@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Karkausvuosi</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const alkuVuosi = prompt("Anna alkuvuosi:");
+      const loppuVuosi = prompt("Anna loppuvuosi:");
+      let vuosi = parseInt(alkuVuosi);
+      let vuodet = "<ul>";
+      while (vuosi <= parseInt(loppuVuosi)) {
+        if ((vuosi % 4 === 0 && vuosi % 100 !== 0) || vuosi % 400 === 0) {
+          vuodet += "<li>" + vuosi + "</li>";
+        }
+        vuosi++;
+      }
+      document.querySelector("#target").innerHTML =
+        "Karkausvuodet välillä " +
+        alkuVuosi +
+        " - " +
+        loppuVuosi +
+        " ovat:<br>" +
+        vuodet;
+    </script>
+  </body>
+</html>

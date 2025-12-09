@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Nopanheittoa</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const noppienMääräStr = prompt("Kuinka monta noppaa heitetään?");
+      const haluttuLukuStr = prompt("Mikä luku halutaan nähdä?");
+      const haluttuLuku = parseInt(haluttuLukuStr);
+      const noppienMäärä = parseInt(noppienMääräStr);
+      let toteutumat = 0;
+      let todennäköisyys = 0;
+      for (let r = 0; r < 10000; r++) {
+        let summa = 0;
+        for (let i = 0; i < noppienMäärä; i++) {
+          summa += Math.floor(Math.random() * 6) + 1;
+        }
+
+        if (summa === haluttuLuku) {
+          toteutumat++;
+        }
+        document.querySelector("#target").innerHTML =
+          "Todennäköisyys saada summa " +
+          haluttuLuku +
+          " heitettäessä " +
+          noppienMäärä +
+          " noppaa on noin " +
+          (toteutumat / 100).toFixed(2) +
+          "%";
+      }
+    </script>
+  </body>
+</html>

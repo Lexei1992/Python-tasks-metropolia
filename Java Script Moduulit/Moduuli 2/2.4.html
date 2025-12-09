@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Numbers in reverse</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const numbers = [];
+      let number;
+      while (number != 0) {
+        number = parseInt(prompt("Type a number (0 to stop):"));
+        numbers.push(number);
+      }
+      numbers.sort((a, b) => a - b);
+      numbers.reverse();
+      console.log(numbers);
+    </script>
+  </body>
+</html>

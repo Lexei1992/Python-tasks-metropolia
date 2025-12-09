@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Numbers</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const numbers = [];
+      let number;
+      while (true) {
+        number = parseInt(prompt("Type a number:"));
+        if (numbers.includes(number)) {
+          alert("Duplicate number, stopping input.");
+          break;
+        }
+        numbers.push(number);
+      }
+      numbers.sort((a, b) => a - b);
+      console.log(numbers);
+    </script>
+  </body>
+</html>

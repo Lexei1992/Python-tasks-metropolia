@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Voting Program</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      const candidateCount = Number(prompt("How many candidates?"));
+      const candidates = [];
+
+      for (let i = 0; i < candidateCount; i++) {
+        const name = prompt(`Name for candidate ${i + 1}`);
+        candidates.push({ name: name, votes: 0 });
+      }
+
+      const voterCount = Number(prompt("How many voters?"));
+
+      for (let i = 0; i < voterCount; i++) {
+        const vote = prompt(
+          `Voter ${i + 1}, who do you vote for? ` +
+            candidates.map((c) => c.name).join(", ") +
+            " " +
+            `(leave empty for no vote)`
+        );
+
+        if (!vote) continue;
+
+        const candidate = candidates.find(
+          (c) => c.name.toLowerCase() === vote.toLowerCase()
+        );
+        if (candidate) {
+          candidate.votes++;
+        }
+      }
+
+      candidates.sort((a, b) => b.votes - a.votes);
+
+      console.log(
+        `The winner is ${candidates[0].name} with ${candidates[0].votes} votes.`
+      );
+      console.log("results:");
+      candidates.forEach((c) => console.log(`${c.name}: ${c.votes} votes`));
+    </script>
+  </body>
+</html>

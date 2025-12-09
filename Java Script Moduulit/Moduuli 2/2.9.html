@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Even numbers</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const evens = [];
+      const numbers = [
+        2, 5, 7, 35, 62, 73, 8475, 84964, 3434638, 34824, 22, 34, 242,
+      ];
+      function even(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 === 0) {
+            evens.push(arr[i]);
+          }
+        }
+        return evens;
+      }
+      even(numbers);
+      console.log(numbers);
+      console.log(evens);
+    </script>
+  </body>
+</html>

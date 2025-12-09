@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Testing JavaScript</title>
+  </head>
+  <body>
+    <h1>Everyday I am rolling</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const rolled = [];
+      function diceRoll() {
+        return Math.floor(Math.random() * 6) + 1;
+      }
+      while (true) {
+        const roll = diceRoll();
+        rolled.push(roll);
+        if (roll === 6) {
+          alert("You rolled a 6, game over!");
+          break;
+        }
+        document.querySelector("#target").innerHTML =
+          "<ul>" + rolled.map((n) => "<li>" + n + "</li>").join("") + "</ul>";
+      }
+    </script>
+  </body>
+</html>
